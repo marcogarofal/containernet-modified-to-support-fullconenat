@@ -64,8 +64,6 @@ RUN cd /home/iptables-1.8.7/ &&  sudo make
 RUN cd /home/iptables-1.8.7/ && sudo make install
 RUN iptables --version
 
-
-
 # install containernet (using its Ansible playbook)
 COPY . /containernet
 WORKDIR /containernet/ansible
@@ -81,4 +79,4 @@ ENV CONTAINERNET_NESTED 1
 
 # Important: This entrypoint is required to start the OVS service
 ENTRYPOINT ["util/docker/entrypoint.sh"]
-CMD ["python3", "examples/containernet_example.py"]
+CMD ["/bin/bash"]
