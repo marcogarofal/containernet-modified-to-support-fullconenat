@@ -39,17 +39,17 @@ docker build -t containernet2/containernet2 .
 You can then directly start the default containernet example:
 
 ```bash
-docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock containernet/containernet
+docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock containernet2/containernet2
 ```
 
 or run an interactive container and drop to the shell:
 
 ```bash
-docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock containernet/containernet /bin/bash
+docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock containernet2/containernet2 /bin/bash
 ```
 
 ```bash
-sudo docker run --name containernet8_da_eliminare -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock --cap-add=ALL -d -v /dev:/dev -v /lib/modules:/lib/modules containernet2/containernet2 /bin/bash
+sudo docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock --cap-add=ALL -d -v /dev:/dev -v /lib/modules:/lib/modules containernet2/containernet2 /bin/bash
 ```
 
 
