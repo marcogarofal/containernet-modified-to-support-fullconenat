@@ -49,7 +49,7 @@ docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/do
 ```
 
 ```bash
-sudo docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock --cap-add=ALL -d -v /dev:/dev -v /lib/modules:/lib/modules containernet2/containernet2 /bin/bash
+#sudo docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock --cap-add=ALL -d -v /dev:/dev -v /lib/modules:/lib/modules containernet2/containernet2 /bin/bash
 ```
 
 
