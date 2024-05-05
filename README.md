@@ -59,13 +59,7 @@ Containernet can be executed within a privileged Docker container (nested contai
 You can build the container locally:
 
 ```bash
-docker build -t containernet/containernet .
-```
-
-or alternatively pull the latest pre-build container:
-
-```bash
-docker pull containernet/containernet
+docker build -t containernet2/containernet2 . 
 ```
 
 You can then directly start the default containernet example:
@@ -79,6 +73,9 @@ or run an interactive container and drop to the shell:
 ```bash
 docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock containernet/containernet /bin/bash
 ```
+
+
+
 
 ## Get started
 
