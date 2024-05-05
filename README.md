@@ -74,6 +74,10 @@ or run an interactive container and drop to the shell:
 docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock containernet/containernet /bin/bash
 ```
 
+```bash
+sudo docker run --name containernet8_da_eliminare -it --rm --privileged --pid='host' -v /var/run/docker.sock:/var/run/docker.sock --cap-add=ALL -d -v /dev:/dev -v /lib/modules:/lib/modules containernet2/containernet2 /bin/bash
+```
+
 
 
 
@@ -81,53 +85,7 @@ docker run --name containernet -it --rm --privileged --pid='host' -v /var/run/do
 
 Using Containernet is very similar to using Mininet.
 
-### Running a basic example
 
-Make sure you are in the `containernet` directory. You can start an example topology with some empty Docker containers connected to the network:
-
-```bash
-sudo python3 examples/containernet_example.py
-```
-
-After launching the emulated network, you can interact with the involved containers through Mininet's interactive CLI. You can for example:
-
-- use `containernet> d1 ifconfig` to see the config of container `d1`
-- use `containernet> d1 ping -c4 d2` to ping between containers
-
-You can exit the CLI using `containernet> exit`.
-
-### Running a client-server example
-
-Let's simulate a webserver and a client making requests. For that, we need a server and client image.
-First, change into the `containernet/examples/basic_webserver` directory.
-
-Containernet already provides a simple Python server for testing purposes. To build the server image, just run
-
-```bash
-docker build -f Dockerfile.server -t test_server:latest .
-```
-
-If you have not added your user to the `docker` group as described [here](https://docs.docker.com/engine/install/linux-postinstall/), you will need to prepend `sudo`. 
-
-We further need a basic client to make a CURL request. Containernet provides that as well. Please run
-
-```bash
-docker build -f Dockerfile.client -t test_client:latest .
-```
-
-Now that we have a server and client image, we can create hosts using them. You can either checkout the topology
-script `demo.py` first or run it directly:
-
-```bash
-sudo python3 demo.py
-```
-
-If everything worked, you should be able to see following output:
-
-```txt
-Execute: client.cmd("time curl 10.0.0.251")
-Hello world.
-```
 
 ### Customizing topologies
 
@@ -148,9 +106,6 @@ d4 = net.addDocker('d4', dimage="ubuntu:trusty", volumes=["/:/mnt/vol1:rw"])
 
 Containernet's documentation can be found in the [GitHub wiki](https://github.com/containernet/containernet/wiki). The documentation for the underlying Mininet project can be found on the [Mininet website](http://mininet.org/).
 
-## Research
-
-Containernet has been used for a variety of research tasks and networking projects. If you use Containernet, let us know!
 
 ### Cite this work
 
