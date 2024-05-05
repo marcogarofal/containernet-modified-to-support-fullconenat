@@ -25,7 +25,7 @@ Containernet is a fork of the famous [Mininet](http://mininet.org) network emula
 ## install Nat module
 https://github.com/Chion82/netfilter-full-cone-nat
 
-## Download VM
+## Download VM, NAT module already installed
 from onedrive
 
 ## Install containernet
